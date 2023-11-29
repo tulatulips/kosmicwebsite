@@ -1,7 +1,26 @@
+<?php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'dataForm');
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+    $name = $_POST["name1"];
+    $year = $_POST["year1"];
+    $why = $_POST["why1"];
+    $query = $conn->prepare("INSERT INTO user_inquiries (Namename,Yearyear,Why)
+    VALUES (?,?,?)");
+    $query->bind_param('sss', $name, $year, $why);
+    $query->execute();
+    $conn->close();
+}
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-79KJ6SEBDN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,25 +32,24 @@
     <title>KOSMIC Dance Club Website, Join Us Page</title>
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
-    <meta name="description" content="Join our K-Pop dance club at the University of South Carolina. Immerse yourself in the vibrant world of K-Pop dance. Experience community, learn iconic choreographies, and dance the night away in our engaging environment.">
-    <meta name="keywords" content="K=Pop, dance, K-Pop dance, choreography, K-Pop choreography, k-pop, k-pop dance, k-pop choreography, dance the night away">
-    <meta name="author" content="Tyla Tipton">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
-        <h1>KOSMIC Dance Club</h1>
-        <ul>
-            <li></l><a href="about.html">About</a></li>
-            <li><a href="join.html">Join Us</a></li>
-        </ul>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://localhost/join.php">Join Us</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <form>
+        <div id="formStyling">
+        <form id="form1" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br>
+            <input type="text" id="name" name="name1"><br>
             <label for="year">Year:</label>
-            <select id="year" name="year">
+            <select id="year" name="year1">
                 <option value="freshman">Freshman</option>
                 <option value="sophomore">Sophomore</option>
                 <option value="junior">Junior</option>
@@ -39,7 +57,7 @@
                 <option value="superSenior">Super Senior</option>
             </select><br>
             <label for="why">Why would you like to join?</label>
-            <input type="text" id="why" name="why"><br>
+            <input type="text" id="why" name="why1"><br>
             <input type="submit">
         </form>
     </main>
