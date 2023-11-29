@@ -1,8 +1,164 @@
-/*
+/*typography*/
+@font-face{
+    src: url(fonts/Roboto-Black.ttf);
+    font-family: roboto-black;
+}
+@font-face{
+    src:url(fonts/Roboto-Light.ttf);
+    font-family:roboto-light;
+}
+
+@font-face{
+    src:url(fonts/Masaaki-Regular.otf);
+    font-family:masaaki;
+}
+
+
+#main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#F5F5F5
+  }
+  
+li {
+    float: left;
+  }
+  
+li a {
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: roboto-light;
+  }
+  
+
+li a:hover {
+    background-color:pink;
+  }
+
+#content{
+    
+	margin:0 auto;
+    text-align:center;
+}
+
+/*add the full background outside of content id*/
 body{
     background-image: url(images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin:0 auto;
 }
-*/
+
+p{
+    font-family:roboto-light;
+}
+
+h1{
+    font-family: roboto-black;
+    color:#F5F5F5;
+    font-size: 50px;
+    text-align: center;
+}
+
+.main-content{
+    margin:auto;
+    background-color:#F5F5F5;
+    width: 70%;
+}
+
+/*transform kosmic title on home page*/
+#kosmic-title{
+    text-transform: uppercase;
+}
+
+/*moving k star logo*/
+#k-logo{
+    margin-top: 100px;
+    top: 300px;
+    
+}
+
+#k1{
+    margin-left:0px;
+}
+
+p{
+
+    text-align:center;
+    margin:auto;
+    width:50%;
+}
+
+h2{
+    font-family:roboto-black;
+    text-align:center;
+}
+
+footer{
+    margin:auto;
+}
+
+.k1{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+img{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#review{
+    color:blueviolet;
+}
+
+button{
+    text-decoration: none;
+    padding: 20px;
+    font-family:roboto-light;
+    background-color:black;
+    border-radius:15px;
+    color:#F5F5F5;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+button:hover{
+    color:pink;
+}
+a{
+    text-decoration:none;
+}
+
+input[type=text] {
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width:20%;
+  }
+
+
+
+
+
+#formStyling{
+    margin-left:80px;
+    margin-top:80px;
+}
+
+label{
+    color:#F5F5F5;
+    font-family:roboto-black;
+    font-size:22px;
+}
